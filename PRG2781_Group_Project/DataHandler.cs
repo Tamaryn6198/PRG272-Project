@@ -25,6 +25,8 @@ namespace PRG2781_Group_Project
         SqlCommand cmd;
         SqlCommand cmd2;
 
+        //Hello can you see this
+
         public DataHandler()
         {
             // Constructor
