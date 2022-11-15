@@ -16,5 +16,13 @@ namespace PRG2781_Group_Project
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Net vir die coding van die main form
+            frmMain main = new frmMain();
+            main.Show();
+            this.Hide();
+        }
     }
 }
