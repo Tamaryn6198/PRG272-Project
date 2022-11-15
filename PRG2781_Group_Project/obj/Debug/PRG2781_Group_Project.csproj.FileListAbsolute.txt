@@ -1,0 +1,12 @@
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\bin\Debug\PRG2781_Group_Project.exe.config
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\bin\Debug\PRG2781_Group_Project.exe
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\bin\Debug\PRG2781_Group_Project.pdb
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\obj\Debug\PRG2781_Group_Project.csproj.AssemblyReference.cache
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\obj\Debug\PRG2781_Group_Project.Login.resources
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\obj\Debug\PRG2781_Group_Project.frmMain.resources
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\obj\Debug\PRG2781_Group_Project.Properties.Resources.resources
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\obj\Debug\PRG2781_Group_Project.Register.resources
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\obj\Debug\PRG2781_Group_Project.csproj.GenerateResource.cache
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\obj\Debug\PRG2781_Group_Project.csproj.CoreCompileInputs.cache
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\obj\Debug\PRG2781_Group_Project.exe
+C:\Belgium Campus\BIT (2nd Year)\PRG2782\Project\Milestone 1\PRG2781_Group_Project\obj\Debug\PRG2781_Group_Project.pdb
