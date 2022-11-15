@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Windows.Forms;
 using System.Data;
 using System.Drawing;
@@ -36,6 +37,35 @@ namespace PRG2781_Group_Project
 
         // Methods for Students
 
+        //Get students method
+        public DataSet GetStudents()
+        {
+            string sqlCmd = @"SELECT * FROM tblStudents";
 
+            conn = new SqlConnection(connString);
+
+            try
+            {
+                conn.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd, conn);
+                DataSet ds = new DataSet();
+
+                da.Fill(ds, "tblStudents");
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+            }
+
+            return null;
+        }
     }
 }

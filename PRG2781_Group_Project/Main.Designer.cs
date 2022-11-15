@@ -30,20 +30,22 @@ namespace PRG2781_Group_Project
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lbxModuleCodes = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.stdDobDate = new System.Windows.Forms.DateTimePicker();
+            this.uploadImgButt = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.searchStdButt = new System.Windows.Forms.Button();
+            this.searchStdTxt = new System.Windows.Forms.TextBox();
+            this.displayStdButt = new System.Windows.Forms.Button();
+            this.updateStdButt = new System.Windows.Forms.Button();
+            this.deleteStdButt = new System.Windows.Forms.Button();
+            this.stdDgv = new System.Windows.Forms.DataGridView();
+            this.createStdButt = new System.Windows.Forms.Button();
+            this.stdAddressTxt = new System.Windows.Forms.TextBox();
+            this.stdPhoneTxt = new System.Windows.Forms.TextBox();
+            this.stdGenderTxt = new System.Windows.Forms.TextBox();
+            this.stdSurnameTxt = new System.Windows.Forms.TextBox();
+            this.stdNameTxt = new System.Windows.Forms.TextBox();
+            this.stdNumTxt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,35 +72,33 @@ namespace PRG2781_Group_Project
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stdDgv)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.button12);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.lbxModuleCodes);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.stdDobDate);
+            this.groupBox1.Controls.Add(this.uploadImgButt);
+            this.groupBox1.Controls.Add(this.pictureBox);
+            this.groupBox1.Controls.Add(this.searchStdButt);
+            this.groupBox1.Controls.Add(this.searchStdTxt);
+            this.groupBox1.Controls.Add(this.displayStdButt);
+            this.groupBox1.Controls.Add(this.updateStdButt);
+            this.groupBox1.Controls.Add(this.deleteStdButt);
+            this.groupBox1.Controls.Add(this.stdDgv);
+            this.groupBox1.Controls.Add(this.createStdButt);
+            this.groupBox1.Controls.Add(this.stdAddressTxt);
+            this.groupBox1.Controls.Add(this.stdPhoneTxt);
+            this.groupBox1.Controls.Add(this.stdGenderTxt);
+            this.groupBox1.Controls.Add(this.stdSurnameTxt);
+            this.groupBox1.Controls.Add(this.stdNameTxt);
+            this.groupBox1.Controls.Add(this.stdNumTxt);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -116,139 +116,156 @@ namespace PRG2781_Group_Project
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student";
             // 
-            // button5
+            // stdDobDate
             // 
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(21, 486);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 31);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "Search By ID";
-            this.button5.UseVisualStyleBackColor = true;
+            this.stdDobDate.Location = new System.Drawing.Point(133, 258);
+            this.stdDobDate.Name = "stdDobDate";
+            this.stdDobDate.Size = new System.Drawing.Size(240, 25);
+            this.stdDobDate.TabIndex = 29;
             // 
-            // textBox9
+            // uploadImgButt
             // 
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(146, 490);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 25);
-            this.textBox9.TabIndex = 25;
+            this.uploadImgButt.Location = new System.Drawing.Point(47, 202);
+            this.uploadImgButt.Name = "uploadImgButt";
+            this.uploadImgButt.Size = new System.Drawing.Size(80, 34);
+            this.uploadImgButt.TabIndex = 28;
+            this.uploadImgButt.Text = "Upload";
+            this.uploadImgButt.UseVisualStyleBackColor = true;
+            this.uploadImgButt.Click += new System.EventHandler(this.uploadImgButt_Click);
             // 
-            // button4
+            // pictureBox
             // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(21, 428);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 29);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Display Students";
-            this.button4.UseVisualStyleBackColor = true;
+            this.pictureBox.Location = new System.Drawing.Point(133, 152);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 27;
+            this.pictureBox.TabStop = false;
             // 
-            // button3
+            // searchStdButt
             // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(187, 428);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 29);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Update Student";
-            this.button3.UseVisualStyleBackColor = true;
+            this.searchStdButt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchStdButt.Location = new System.Drawing.Point(21, 486);
+            this.searchStdButt.Name = "searchStdButt";
+            this.searchStdButt.Size = new System.Drawing.Size(106, 31);
+            this.searchStdButt.TabIndex = 26;
+            this.searchStdButt.Text = "Search By ID";
+            this.searchStdButt.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // searchStdTxt
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(355, 428);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 29);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Delete Student";
-            this.button2.UseVisualStyleBackColor = true;
+            this.searchStdTxt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchStdTxt.Location = new System.Drawing.Point(146, 490);
+            this.searchStdTxt.Name = "searchStdTxt";
+            this.searchStdTxt.Size = new System.Drawing.Size(100, 25);
+            this.searchStdTxt.TabIndex = 25;
             // 
-            // dataGridView1
+            // displayStdButt
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 299);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(485, 112);
-            this.dataGridView1.TabIndex = 20;
+            this.displayStdButt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayStdButt.Location = new System.Drawing.Point(21, 428);
+            this.displayStdButt.Name = "displayStdButt";
+            this.displayStdButt.Size = new System.Drawing.Size(150, 29);
+            this.displayStdButt.TabIndex = 23;
+            this.displayStdButt.Text = "Display Students";
+            this.displayStdButt.UseVisualStyleBackColor = true;
             // 
-            // lbxModuleCodes
+            // updateStdButt
             // 
-            this.lbxModuleCodes.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxModuleCodes.FormattingEnabled = true;
-            this.lbxModuleCodes.ItemHeight = 17;
-            this.lbxModuleCodes.Location = new System.Drawing.Point(405, 177);
-            this.lbxModuleCodes.Name = "lbxModuleCodes";
-            this.lbxModuleCodes.Size = new System.Drawing.Size(100, 55);
-            this.lbxModuleCodes.TabIndex = 19;
+            this.updateStdButt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateStdButt.Location = new System.Drawing.Point(187, 428);
+            this.updateStdButt.Name = "updateStdButt";
+            this.updateStdButt.Size = new System.Drawing.Size(150, 29);
+            this.updateStdButt.TabIndex = 22;
+            this.updateStdButt.Text = "Update Student";
+            this.updateStdButt.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // deleteStdButt
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(405, 238);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 55);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Create New Student";
-            this.button1.UseVisualStyleBackColor = true;
+            this.deleteStdButt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteStdButt.Location = new System.Drawing.Point(355, 428);
+            this.deleteStdButt.Name = "deleteStdButt";
+            this.deleteStdButt.Size = new System.Drawing.Size(150, 29);
+            this.deleteStdButt.TabIndex = 21;
+            this.deleteStdButt.Text = "Delete Student";
+            this.deleteStdButt.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // stdDgv
             // 
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(405, 121);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 50);
-            this.textBox8.TabIndex = 16;
+            this.stdDgv.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.stdDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stdDgv.Location = new System.Drawing.Point(21, 299);
+            this.stdDgv.Name = "stdDgv";
+            this.stdDgv.RowHeadersWidth = 51;
+            this.stdDgv.RowTemplate.Height = 24;
+            this.stdDgv.Size = new System.Drawing.Size(485, 112);
+            this.stdDgv.TabIndex = 20;
             // 
-            // textBox7
+            // createStdButt
             // 
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(405, 84);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 25);
-            this.textBox7.TabIndex = 15;
+            this.createStdButt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createStdButt.Location = new System.Drawing.Point(405, 238);
+            this.createStdButt.Name = "createStdButt";
+            this.createStdButt.Size = new System.Drawing.Size(100, 55);
+            this.createStdButt.TabIndex = 18;
+            this.createStdButt.Text = "Create New Student";
+            this.createStdButt.UseVisualStyleBackColor = true;
+            this.createStdButt.Click += new System.EventHandler(this.createStdButt_Click);
             // 
-            // textBox6
+            // stdAddressTxt
             // 
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(405, 43);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 25);
-            this.textBox6.TabIndex = 14;
+            this.stdAddressTxt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stdAddressTxt.Location = new System.Drawing.Point(405, 121);
+            this.stdAddressTxt.Multiline = true;
+            this.stdAddressTxt.Name = "stdAddressTxt";
+            this.stdAddressTxt.Size = new System.Drawing.Size(100, 50);
+            this.stdAddressTxt.TabIndex = 16;
             // 
-            // textBox3
+            // stdPhoneTxt
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(133, 121);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 25);
-            this.textBox3.TabIndex = 11;
+            this.stdPhoneTxt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stdPhoneTxt.Location = new System.Drawing.Point(405, 84);
+            this.stdPhoneTxt.Name = "stdPhoneTxt";
+            this.stdPhoneTxt.Size = new System.Drawing.Size(100, 25);
+            this.stdPhoneTxt.TabIndex = 15;
             // 
-            // textBox2
+            // stdGenderTxt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(133, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 25);
-            this.textBox2.TabIndex = 10;
+            this.stdGenderTxt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stdGenderTxt.Location = new System.Drawing.Point(405, 43);
+            this.stdGenderTxt.Name = "stdGenderTxt";
+            this.stdGenderTxt.Size = new System.Drawing.Size(100, 25);
+            this.stdGenderTxt.TabIndex = 14;
             // 
-            // textBox1
+            // stdSurnameTxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(133, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 9;
+            this.stdSurnameTxt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stdSurnameTxt.Location = new System.Drawing.Point(133, 121);
+            this.stdSurnameTxt.Name = "stdSurnameTxt";
+            this.stdSurnameTxt.Size = new System.Drawing.Size(100, 25);
+            this.stdSurnameTxt.TabIndex = 11;
+            // 
+            // stdNameTxt
+            // 
+            this.stdNameTxt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stdNameTxt.Location = new System.Drawing.Point(133, 84);
+            this.stdNameTxt.Name = "stdNameTxt";
+            this.stdNameTxt.Size = new System.Drawing.Size(100, 25);
+            this.stdNameTxt.TabIndex = 10;
+            // 
+            // stdNumTxt
+            // 
+            this.stdNumTxt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stdNumTxt.Location = new System.Drawing.Point(133, 45);
+            this.stdNumTxt.Name = "stdNumTxt";
+            this.stdNumTxt.Size = new System.Drawing.Size(100, 25);
+            this.stdNumTxt.TabIndex = 9;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(297, 180);
+            this.label9.Location = new System.Drawing.Point(283, 187);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(97, 17);
             this.label9.TabIndex = 8;
@@ -258,7 +275,7 @@ namespace PRG2781_Group_Project
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(297, 124);
+            this.label8.Location = new System.Drawing.Point(283, 124);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 17);
             this.label8.TabIndex = 7;
@@ -268,7 +285,7 @@ namespace PRG2781_Group_Project
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(297, 87);
+            this.label7.Location = new System.Drawing.Point(283, 87);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 17);
             this.label7.TabIndex = 6;
@@ -278,7 +295,7 @@ namespace PRG2781_Group_Project
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(297, 48);
+            this.label6.Location = new System.Drawing.Point(283, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 17);
             this.label6.TabIndex = 5;
@@ -288,7 +305,7 @@ namespace PRG2781_Group_Project
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 250);
+            this.label5.Location = new System.Drawing.Point(6, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 17);
             this.label5.TabIndex = 4;
@@ -513,29 +530,17 @@ namespace PRG2781_Group_Project
             this.button11.Text = "EXIT";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // comboBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(133, 159);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 77);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(47, 202);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(80, 34);
-            this.button12.TabIndex = 28;
-            this.button12.Text = "Upload";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 250);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(240, 25);
-            this.dateTimePicker1.TabIndex = 29;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "PRG272",
+            "INF271",
+            "INL271"});
+            this.comboBox1.Location = new System.Drawing.Point(407, 184);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(98, 25);
+            this.comboBox1.TabIndex = 30;
             // 
             // frmMain
             // 
@@ -552,11 +557,11 @@ namespace PRG2781_Group_Project
             this.Text = "Main Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stdDgv)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -564,14 +569,13 @@ namespace PRG2781_Group_Project
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox lbxModuleCodes;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button createStdButt;
+        private System.Windows.Forms.TextBox stdAddressTxt;
+        private System.Windows.Forms.TextBox stdPhoneTxt;
+        private System.Windows.Forms.TextBox stdGenderTxt;
+        private System.Windows.Forms.TextBox stdSurnameTxt;
+        private System.Windows.Forms.TextBox stdNameTxt;
+        private System.Windows.Forms.TextBox stdNumTxt;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -581,12 +585,12 @@ namespace PRG2781_Group_Project
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button searchStdButt;
+        private System.Windows.Forms.TextBox searchStdTxt;
+        private System.Windows.Forms.Button displayStdButt;
+        private System.Windows.Forms.Button updateStdButt;
+        private System.Windows.Forms.Button deleteStdButt;
+        private System.Windows.Forms.DataGridView stdDgv;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox lbxModuleLinks;
         private System.Windows.Forms.Button button6;
@@ -604,8 +608,9 @@ namespace PRG2781_Group_Project
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button uploadImgButt;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.DateTimePicker stdDobDate;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
