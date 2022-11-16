@@ -30,6 +30,7 @@ namespace PRG2781_Group_Project
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.stdModuleBox = new System.Windows.Forms.ComboBox();
             this.stdDobDate = new System.Windows.Forms.DateTimePicker();
             this.uploadImgButt = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -72,7 +73,6 @@ namespace PRG2781_Group_Project
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdDgv)).BeginInit();
@@ -82,7 +82,7 @@ namespace PRG2781_Group_Project
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.stdModuleBox);
             this.groupBox1.Controls.Add(this.stdDobDate);
             this.groupBox1.Controls.Add(this.uploadImgButt);
             this.groupBox1.Controls.Add(this.pictureBox);
@@ -115,6 +115,14 @@ namespace PRG2781_Group_Project
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student";
+            // 
+            // stdModuleBox
+            // 
+            this.stdModuleBox.FormattingEnabled = true;
+            this.stdModuleBox.Location = new System.Drawing.Point(407, 184);
+            this.stdModuleBox.Name = "stdModuleBox";
+            this.stdModuleBox.Size = new System.Drawing.Size(98, 25);
+            this.stdModuleBox.TabIndex = 30;
             // 
             // stdDobDate
             // 
@@ -151,6 +159,7 @@ namespace PRG2781_Group_Project
             this.searchStdButt.TabIndex = 26;
             this.searchStdButt.Text = "Search By ID";
             this.searchStdButt.UseVisualStyleBackColor = true;
+            this.searchStdButt.Click += new System.EventHandler(this.searchStdButt_Click);
             // 
             // searchStdTxt
             // 
@@ -169,6 +178,7 @@ namespace PRG2781_Group_Project
             this.displayStdButt.TabIndex = 23;
             this.displayStdButt.Text = "Display Students";
             this.displayStdButt.UseVisualStyleBackColor = true;
+            this.displayStdButt.Click += new System.EventHandler(this.displayStdButt_Click);
             // 
             // updateStdButt
             // 
@@ -179,6 +189,7 @@ namespace PRG2781_Group_Project
             this.updateStdButt.TabIndex = 22;
             this.updateStdButt.Text = "Update Student";
             this.updateStdButt.UseVisualStyleBackColor = true;
+            this.updateStdButt.Click += new System.EventHandler(this.updateStdButt_Click);
             // 
             // deleteStdButt
             // 
@@ -189,6 +200,7 @@ namespace PRG2781_Group_Project
             this.deleteStdButt.TabIndex = 21;
             this.deleteStdButt.Text = "Delete Student";
             this.deleteStdButt.UseVisualStyleBackColor = true;
+            this.deleteStdButt.Click += new System.EventHandler(this.deleteStdButt_Click);
             // 
             // stdDgv
             // 
@@ -200,6 +212,7 @@ namespace PRG2781_Group_Project
             this.stdDgv.RowTemplate.Height = 24;
             this.stdDgv.Size = new System.Drawing.Size(485, 112);
             this.stdDgv.TabIndex = 20;
+            this.stdDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stdDgv_CellClick);
             // 
             // createStdButt
             // 
@@ -530,18 +543,6 @@ namespace PRG2781_Group_Project
             this.button11.Text = "EXIT";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PRG272",
-            "INF271",
-            "INL271"});
-            this.comboBox1.Location = new System.Drawing.Point(407, 184);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(98, 25);
-            this.comboBox1.TabIndex = 30;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -555,6 +556,7 @@ namespace PRG2781_Group_Project
             this.MinimizeBox = false;
             this.Name = "frmMain";
             this.Text = "Main Form";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
@@ -611,6 +613,6 @@ namespace PRG2781_Group_Project
         private System.Windows.Forms.Button uploadImgButt;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.DateTimePicker stdDobDate;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox stdModuleBox;
     }
 }
