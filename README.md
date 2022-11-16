@@ -22,18 +22,33 @@ Download Visual Studio (Community version) [here](https://visualstudio.microsoft
 
 After you have downloaded the .zip file with all of the project files inside, you will have access to all of the files needed to run the application.
 
+
 **__The steps to follow will be as follow:__**
 1. In the project folder, click on the file called "ProjectDatabaseScript.sql".
 
 ![sql](https://user-images.githubusercontent.com/109979304/202199178-ab871936-663b-4f69-b99b-51cdcd3606ab.PNG)
 
-2. This will automaticly open SSMS (SQL Server Management Studio) and will direct you the connection form.
+2. This will automaticly open SSMS (SQL Server Management Studio) and will direct you the connection form. Click "Connnect".
 
 ![menu](https://user-images.githubusercontent.com/109979304/202200710-7179b4f4-cd8f-490c-b6c8-264041173ebd.PNG)
 
+3. A query of the script will then automatically be made for you. Press "Execute" on the top-left.
+
+![execute](https://user-images.githubusercontent.com/109979304/202201739-819778c4-16ad-4364-a134-22bdd84f3ac7.png)
+
+4. SSMS can then be closed and you can return to the project folder.
+
+5. In the project folder, click on the folder called "PRG2781_Group_Project". In that folder click on the file called "PRG2781_Group_Project.sln".
+
+![s](https://user-images.githubusercontent.com/109979304/202202672-511ac8d9-aef3-4174-add3-84723ac5c99a.PNG)
+
+6. This will automaticly open Visual Studio and will open the application files. Click "Start" at the top to open the application.
+
+![start](https://user-images.githubusercontent.com/109979304/202203213-de383371-c944-40c9-84e3-281e1dbe7ef3.PNG)
+
+### How to use the application 
 
 ## Contributors
-
 
 #### **Tamaryn Nell** 
 
