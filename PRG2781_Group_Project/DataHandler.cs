@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Security.Cryptography;
 using System.Xml.Linq;
 using System.IO;
+using System.Data.Common;
 
 namespace PRG2781_Group_Project
 {
@@ -26,6 +27,7 @@ namespace PRG2781_Group_Project
         SqlConnection conn;
         SqlCommand cmd;
         SqlCommand cmd2;
+        SqlCommand cmd3;
 
         public DataHandler()
         {
@@ -42,7 +44,7 @@ namespace PRG2781_Group_Project
         //Get students method
         public DataSet GetStudents()
         {
-            string sqlCmd = @"SELECT * FROM tblStudents";
+            string sqlCmd = @"SELECT * FROM tblStudents RIGHT JOIN tblStudent_Module ON tblStudent_Module.StudentNumber = tblStudents.StudentNumber";
 
             conn = new SqlConnection(connString);
 
@@ -73,7 +75,7 @@ namespace PRG2781_Group_Project
         // Add method
         public void AddStudent(string stdNum, string name, string surname, byte[] bytes, DateTime dob, string gender, string phone, string address, string module)
         {
-            string sqlCmd = @"INSERT INTO tblStudents VALUES ('" + stdNum + "', '" + name + "', '" + surname + "', '" + bytes + "', '" + dob + "', '" + gender + "', '" + phone + "', '" + address + "')";
+            string sqlCmd = @"INSERT INTO tblStudents VALUES ('" + stdNum + "', '" + name + "', '" + surname + "', @img, '" + dob + "', '" + gender + "', '" + phone + "', '" + address + "')";
             string sqlCmd2 = @"INSERT INTO tblStudent_Module VALUES ('" + stdNum + "', '" + module + "')";
 
             conn = new SqlConnection(connString);
@@ -82,6 +84,7 @@ namespace PRG2781_Group_Project
             {
                 conn.Open();
                 cmd = new SqlCommand(sqlCmd, conn);
+                cmd.Parameters.AddWithValue("@img", bytes);
                 cmd.ExecuteNonQuery();
 
                 cmd2 = new SqlCommand(sqlCmd2, conn);
@@ -100,8 +103,9 @@ namespace PRG2781_Group_Project
         // Update method
         public void UpdateStudent(string selectedID, string stdNum, string name, string surname, byte[] bytes, DateTime dob, string gender, string phone, string address, string module)
         {
-            string sqlCmd = @"UPDATE tblStudents SET StudentNumber = '" + stdNum + "', StudentName = '" + name + "', StudentSurname = '" + surname + "', StudentImage = '" + bytes + "', DateOfBirth = '" + dob + "', Gender = '" + gender + "', PhoneNumber = '" + phone + "', Address = '" + address + "' WHERE StudentNumber = '" + selectedID + "'";
-            string sqlCmd2 = @"UPDATE tblStudent_Module SET StudentNumber = '" + stdNum + "', ModuleCode = '" + module + "'";
+            string sqlCmd = @"UPDATE tblStudents SET StudentNumber = '" + stdNum + "', StudentName = '" + name + "', StudentSurname = '" + surname + "', StudentImage =  @img, DateOfBirth = '" + dob + "', Gender = '" + gender + "', PhoneNumber = '" + phone + "', Address = '" + address + "' WHERE StudentNumber = '" + selectedID + "'";
+            string sqlCmd2 = @"INSERT INTO tblStudent_Module Values ('" + stdNum + "', '" + module + "')";
+            string slctCmd = @"SELECT ModuleCode FROM tblStudent_Module WHERE StudentNumber = '" + stdNum + "'";
 
             conn = new SqlConnection(connString);
 
@@ -109,10 +113,32 @@ namespace PRG2781_Group_Project
             {
                 conn.Open();
                 cmd = new SqlCommand(sqlCmd, conn);
+                cmd.Parameters.AddWithValue("@img", bytes);
                 cmd.ExecuteNonQuery();
 
-                cmd2 = new SqlCommand(sqlCmd2, conn);
-                cmd2.ExecuteNonQuery();
+                bool cont = false;
+                cmd2 = new SqlCommand(slctCmd, conn);
+                SqlDataReader dr = cmd2.ExecuteReader();
+                while(dr.Read()) 
+                {
+                    if (dr["ModuleCode"].ToString() != module)
+                    {
+                        cont = true;
+                        break;
+                    }
+                }
+                dr.Close();
+                if(cont)
+                {
+                    cmd3 = new SqlCommand(sqlCmd2, conn);
+                    cmd3.ExecuteNonQuery();
+                }
+                else
+                {
+                    string sqlCmd3 = @"UPDATE tblStudent_Module SET StudentNumber = '" + stdNum + "', ModuleCode = '" + module + "'";
+                    cmd3 = new SqlCommand(sqlCmd3, conn);
+                    cmd3.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
@@ -154,32 +180,20 @@ namespace PRG2781_Group_Project
         }
 
         // Search method
-        public List<string> SearchStudent(string selectedID)
+        public DataSet SearchStudent(string selectedID)
         {
-            string sqlCmd = @"SELECT * FROM tblStudents WHERE StudentNumber = '" + selectedID + "'";
+            string sqlCmd = @"SELECT * FROM tblStudents RIGHT JOIN tblStudent_Module ON tblStudent_Module.StudentNumber = tblStudents.StudentNumber WHERE tblStudent_Module.StudentNumber = '" + selectedID + "'";
             conn = new SqlConnection(connString);
 
             try
             {
-                List<string> list = new List<string>();
                 conn.Open();
-                cmd = new SqlCommand(sqlCmd, conn);
 
-                using (SqlDataReader dr = cmd.ExecuteReader())
-                {
-                    dr.Read();
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd, conn);
+                DataSet ds = new DataSet();
 
-                    list.Add(dr["StudentNumber"].ToString());
-                    list.Add(dr["StudentName"].ToString());
-                    list.Add(dr["StudentSurname"].ToString());
-                    //list.Add(dr["StudentImage"].ToString());
-                    list.Add(dr["DateOfBirth"].ToString());
-                    list.Add(dr["Gender"].ToString());
-                    list.Add(dr["PhoneNumber"].ToString());
-                    list.Add(dr["Address"].ToString());
-                }
-
-                return list;
+                da.Fill(ds, "tblStudents");
+                return ds;
             }
             catch (Exception ex)
             {
@@ -191,6 +205,31 @@ namespace PRG2781_Group_Project
                 conn.Close();
             }
 
+            return null;
+        }
+
+        public DataTable FillComboBox()
+        {
+            conn = new SqlConnection(connString);
+
+            try
+            {
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(@"SELECT ModuleCode FROM tblModule", conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+            }
             return null;
         }
     }

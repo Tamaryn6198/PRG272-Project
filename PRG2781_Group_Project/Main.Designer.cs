@@ -119,10 +119,6 @@ namespace PRG2781_Group_Project
             // stdModuleBox
             // 
             this.stdModuleBox.FormattingEnabled = true;
-            this.stdModuleBox.Items.AddRange(new object[] {
-            "PRG272",
-            "INF271",
-            "INL271"});
             this.stdModuleBox.Location = new System.Drawing.Point(407, 184);
             this.stdModuleBox.Name = "stdModuleBox";
             this.stdModuleBox.Size = new System.Drawing.Size(98, 25);
@@ -216,6 +212,7 @@ namespace PRG2781_Group_Project
             this.stdDgv.RowTemplate.Height = 24;
             this.stdDgv.Size = new System.Drawing.Size(485, 112);
             this.stdDgv.TabIndex = 20;
+            this.stdDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stdDgv_CellClick);
             // 
             // createStdButt
             // 
@@ -559,6 +556,7 @@ namespace PRG2781_Group_Project
             this.MinimizeBox = false;
             this.Name = "frmMain";
             this.Text = "Main Form";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

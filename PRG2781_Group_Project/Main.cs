@@ -12,6 +12,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Drawing.Configuration;
+using System.Drawing.Design;
+using System.Drawing.Drawing2D;
+using System.Drawing.Printing;
+using System.Drawing.Text;
+using System.Data.Common;
 
 namespace PRG2781_Group_Project
 {
@@ -37,6 +43,8 @@ namespace PRG2781_Group_Project
         {
             DataSet ds = dataHandler.GetStudents();
             stdDgv.DataSource = ds.Tables["tblStudents"].DefaultView;
+            DataGridViewImageColumn imgCol = ((DataGridViewImageColumn)stdDgv.Columns["StudentImage"]);
+            imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
 
         private void createStdButt_Click(object sender, EventArgs e)
@@ -47,11 +55,10 @@ namespace PRG2781_Group_Project
             // Get image using memory stream
             if (pictureBox.Image != null)
             {
+                //Bitmap image = new Bitmap(pictureBox.Image);
                 ms = new MemoryStream();
                 pictureBox.Image.Save(ms, ImageFormat.Jpeg);
-                bytes = new byte[ms.Length];
-                ms.Position = 0;
-                ms.Read(bytes, 0, bytes.Length);
+                bytes = ms.ToArray();
 
                 // Get info
                 string stdNum = stdNumTxt.Text;
@@ -65,6 +72,8 @@ namespace PRG2781_Group_Project
 
                 // Add to database
                 dataHandler.AddStudent(stdNum, name, surname, bytes, dob, gender, phone, address, module);
+
+                MessageBox.Show("Student saved successfully!");
             }
             else
             {
@@ -80,6 +89,7 @@ namespace PRG2781_Group_Project
 
                 // Add to database
                 dataHandler.AddStudent(stdNum, name, surname, bytes, dob, gender, phone, address, module);
+                MessageBox.Show("Student saved successfully!");
             }
         }
 
@@ -153,63 +163,34 @@ namespace PRG2781_Group_Project
 
         private void searchStdButt_Click(object sender, EventArgs e)
         {
-            List<string> list = new List<string>();
+            DataSet ds = dataHandler.SearchStudent(searchStdTxt.Text);
 
-            list = dataHandler.SearchStudent(searchStdTxt.Text);
+            DisplayStudentDGV();
+        }
 
-            stdNumTxt.Text = list[0].ToString();
-            stdNameTxt.Text = list[1].ToString();
-            stdSurnameTxt.Text = list[2].ToString();
-            /*byte[] bytes = new byte[list[3].ToString().Length];
-            string[] str = list[3].ToString().Split();
-            bytes = Convert.ToByte(str);
-            MemoryStream ms = new MemoryStream(bytes);
-            pictureBox.Image.Clone(ms);*/
-
-            /*            byte[] bytes = null;
-                        BinaryFormatter bf = new BinaryFormatter();
-                        using (var ms = new MemoryStream())
-                        {
-                            bf.Serialize(ms, list[3]);
-                            bytes = ms.ToArray();
-                            Image img = Image.FromStream(ms);
-                            pictureBox.Image = img;
-                        }*/
-            /*using (var ms = new MemoryStream(bytes))
+        private void stdDgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
             {
-                Image img = Image.FromStream(ms);
+                DataGridViewRow row = stdDgv.Rows[e.RowIndex];
+                stdNumTxt.Text = row.Cells[0].Value.ToString();
+                stdNameTxt.Text = row.Cells[1].Value.ToString();
+                stdSurnameTxt.Text = row.Cells[2].Value.ToString();
+                Image img = (Bitmap)((new ImageConverter()).ConvertFrom(row.Cells[3].Value));
                 pictureBox.Image = img;
-            }*/
-            string host = "TAMMYLAPTOP\\SQLEXPRESS";
-            string database = "BCdatabase";
-            string connString = @"Data Source = " + host + "; Initial Catalog=" + database + ";Integrated Security=SSPI";
-            SqlConnection conn = new SqlConnection(connString);
-
-            conn.Open();
-            string query = "select StudentImage from tblStudents";
-            SqlCommand imgCmd = new SqlCommand(query, conn);
-            
-            byte[] bytes = null;
-            BinaryFormatter bf = new BinaryFormatter();
-            using (var ms = new MemoryStream())
-            {
-                bf.Serialize(ms, imgCmd.ExecuteScalar());
-                bytes = ms.ToArray();
-                /*Image img = Image.FromStream(ms);
-                pictureBox.Image = img;*/
-
-                Image img = (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
+                stdDobDate.Text = row.Cells[4].Value.ToString();
+                stdGenderTxt.Text = row.Cells[5].Value.ToString();
+                stdPhoneTxt.Text = row.Cells[6].Value.ToString();
+                stdAddressTxt.Text = row.Cells[7].Value.ToString();
             }
+        }
 
-            //pictureBox.Image = img;
-
-            conn.Close();
-
-            stdDobDate.Value = Convert.ToDateTime(list[4]);
-            stdGenderTxt.Text = list[5].ToString();
-            stdPhoneTxt.Text = list[6].ToString();
-            stdAddressTxt.Text = list[7].ToString();
-            //stdModuleBox.Text = list[7].ToString();
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            DataTable dt = dataHandler.FillComboBox();
+            stdModuleBox.DataSource = dt;
+            stdModuleBox.DisplayMember = "ModuleCode";
+            stdModuleBox.ValueMember = "ModuleCode";
         }
     }
 }
