@@ -16,5 +16,12 @@ namespace PRG2781_Group_Project
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FileHandler fh = new FileHandler();
+            fh.RegisterUser(txtNewUsername.Text, txtNewPassword.Text);
+            this.Close();
+        }
     }
 }

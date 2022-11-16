@@ -29,29 +29,29 @@ namespace PRG2781_Group_Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.txtNewUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox2
+            // txtNewPassword
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(229, 163);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 25);
-            this.textBox2.TabIndex = 13;
+            this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPassword.Location = new System.Drawing.Point(229, 163);
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Size = new System.Drawing.Size(129, 25);
+            this.txtNewPassword.TabIndex = 13;
             // 
-            // textBox1
+            // txtNewUsername
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(229, 98);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 25);
-            this.textBox1.TabIndex = 12;
+            this.txtNewUsername.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewUsername.Location = new System.Drawing.Point(229, 98);
+            this.txtNewUsername.Name = "txtNewUsername";
+            this.txtNewUsername.Size = new System.Drawing.Size(129, 25);
+            this.txtNewUsername.TabIndex = 12;
             // 
             // label3
             // 
@@ -59,7 +59,7 @@ namespace PRG2781_Group_Project
             this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(62, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 19);
+            this.label3.Size = new System.Drawing.Size(111, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "NEW PASSWORD:";
             // 
@@ -69,7 +69,7 @@ namespace PRG2781_Group_Project
             this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(62, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 19);
+            this.label2.Size = new System.Drawing.Size(112, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "NEW USERNAME:";
             // 
@@ -92,6 +92,7 @@ namespace PRG2781_Group_Project
             this.button2.TabIndex = 8;
             this.button2.Text = "REGISTER";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Register
             // 
@@ -99,8 +100,8 @@ namespace PRG2781_Group_Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(423, 338);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNewPassword);
+            this.Controls.Add(this.txtNewUsername);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -114,8 +115,8 @@ namespace PRG2781_Group_Project
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNewPassword;
+        private System.Windows.Forms.TextBox txtNewUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
