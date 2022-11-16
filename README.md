@@ -12,19 +12,48 @@ A small windows forms application that is connected to a database (SQL Server). 
 ### Status 
 The completion of the project occured on **16/11/2022**. 
 
+## Application
+### How to run the application 
+As mentioned earlier in this document, **Visual Studio** and **Microsoft SQL Server Management Studio (SQL Server)** will be neccessary to run this program.
+
+If you do not have these applications, download links are provided below:
+
+Download Visual Studio (Community version) [here](https://visualstudio.microsoft.com/downloads/) and download Microsoft SQL Server Management Studio (Express version)  [here](https://visualstudio.microsoft.com/downloads/).
+
+After you have downloaded the .zip file with all of the project files inside, you will have access to all of the files needed to run the application.
+
+**__The steps to follow will be as follow:__**
+1. In the project folder, click on the file called "ProjectDatabaseScript.sql".
+
+![sql](https://user-images.githubusercontent.com/109979304/202199178-ab871936-663b-4f69-b99b-51cdcd3606ab.PNG)
+
+2. This will automaticly open SSMS (SQL Server Management Studio) and will direct you the connection form.
+
+![menu](https://user-images.githubusercontent.com/109979304/202200710-7179b4f4-cd8f-490c-b6c8-264041173ebd.PNG)
+
+
 ## Contributors
 
 
-#### Tamaryn Nell (577097)
+#### **Tamaryn Nell** 
+
+Student Email: 577097@student.belgiumcampus.ac.za
 - Data access class
 ___
-#### Emile Ayden Fourie (577102)
+#### Emile Ayden Fourie 
+
+Student Email: 577102@student.belgiumcampus.ac.za
 - Classes and fields
 ___
-#### Anton De Vos (578302)
+#### **Anton De Vos**
+
+Student Email: 578302@student.belgiumcampus.ac.za
+
 - Creation of windows forms
 - Login validation (text file)
 ___
-#### Damon Hattingh (577143)
+#### **Damon Hattingh** 
+
+Student Email: 577143@student.belgiumcampus.ac.za
 - Database and tables
 - ReadMe
